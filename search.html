@@ -2,11 +2,11 @@
 layout: default
 ---
 
-<section class="container mx-auto">
+<section class="container mx-auto min-h-[40vh] grid grid-cols-1 items-center ">
 <div>
     <!-- HTML elements for search -->
-  <input class="flex justify-center border-2 border-gray-200 p-6 w-full"type="text" id="search-input" placeholder="What are you looking for?">
-  <ul class="grid grid-cols-3 gap-2 my-5" id="results-container"></ul>
+  <input class="border focus:outline-none text-s font-light tracking-[.1em] placeholder-black focus:placeholder-gray-400 text-black focus:border-gray-400 border-black p-6 w-full" type="text" id="search-input" placeholder="What are you looking for?">
+  <ul class="grid grid-cols-1 my-5" id="results-container"></ul>
 
   <!-- or without installing anything -->
   <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
@@ -17,10 +17,11 @@ layout: default
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('results-container'),
       json: '/search.json',
-      searchResultTemplate: '<div class="m-1"><a href="{{ site.url }}{url}" class="p-4 rounded bg-slate-300 block"><h2>{title}</h2><p class="text-xs uppercase leading-5">Category</p></a></div>',
+      searchResultTemplate: '<div class="m-1"><a href="{{ site.url }}{url}" class="p-4 border-b block"><h2>{title}</h2><p class="text-xs uppercase leading-7 tracking-[.2em]">{categories}</p></a></div>',
       noResultsText: '<div class="">Sorry no luck</div>'
     })
   </script>
 </div>
 </section>
 
+<div class="m-1"><a href="{{ site.url }}{url}" class="p-4 rounded bg-slate-300 block"><h2>{title}</h2><p class="text-xs uppercase leading-5 tracking-[.3em]">Category</p></a></div>

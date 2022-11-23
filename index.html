@@ -37,11 +37,11 @@ seo:
   {% for post in site.posts limit: 10 %}
 
   <a href="{{post.url}}" class="relative bg-slate-200 bg-cover bg-center p-10 
-    {% cycle 'col-span-3 row-span-2 featured-text text-4xl leading-7', 'col-span-1', 'col-span-2 featured-text text-2xl', 'col-span-3 row-span-2 featured-text text-4xl leading-20', 'row-span-2', 'col-span-1', 'col-span-1', 'col-span-2 featured-text text-2xl', 'col-span-2 featured-text text-2xl', 'col-span-1 %}" 
+    {% cycle 'col-span-3 row-span-2 featured-text text-4xl leading-10', 'col-span-1', 'col-span-2 featured-text text-3xl leading-9', 'col-span-3 row-span-2 featured-text text-4xl leading-10', 'row-span-2', 'col-span-1', 'col-span-1', 'col-span-2 featured-text text-3xl leading-9', 'col-span-2 featured-text text-3xl leading-9', 'col-span-1 %}" 
     style="background-image:url('{{post.featured-image}}')">
-    <div class="absolute text-center inset-0 flex justify-center items-center cursor-pointer p-5 m-2 text-transparent span-border-parent hover:bg-white/[.95] hover:text-black transition duration-300">
+    <div class="absolute text-center inset-0 flex justify-center items-center cursor-pointer p-10 m-2 text-transparent span-border-parent hover:bg-white/[.95] hover:text-black transition duration-300">
       <div>
-        <h2 class="tracking-[.03em] block mb-4">{{post.title}}</h2>
+        <h2 class="tracking-[.03em] block mb-2">{{post.title}}</h2>
         <span class="text-xs uppercase tracking-[.3em] pb-2 figtree">{{post.categories[0]}}</span>
       </div>
     </div>  
