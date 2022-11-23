@@ -1,0 +1,54 @@
+---
+layout: default
+heading: What to do in Vietnam
+featured-image: https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80
+banner-text: Hello
+overlay: true
+
+---
+
+<!------------------ Image banner ------------------>
+
+<section> 
+  <div class="{% if page.overlay == true %} bg-blend-multiply bg-neutral-500 text-white {% endif %} bg-cover h-[50vh] bg-center flex justify-center items-center text-2xl"
+  style="background-image: url('{{page.featured-image}}')">
+    <div class="text-lg">{{page.banner-text}}</div>
+  </div>
+</section>
+
+<!------------------ Title section ------------------>
+
+<section class="text-center py-10 container mx-auto px-4">
+  <span class="text-sm uppercase block py-5">{{page.categories}}</span>
+  <h1 class="text-2xl">{{page.title}}</h1>
+  <span class="text-sm block py-5">{{page.author}}</span>
+  <span class="text-sm block">{{page.date | date: "%d %b %Y"}}</span>
+</section>
+
+<!------------------ Social sharing ------------------>
+
+{% include social-sharing.html %}
+
+<!------------------ Blocks ------------------>
+
+{% for block in page.page_blocks %}
+  {% include /blocks/{{block._id}}.html %}
+{% endfor %}
+
+<!------------------ Related posts ------------------>
+
+<section class="bg-slate-200 text-center py-10">
+	<h4> Related Posts </h4>
+	<div class="grid grid-cols-3 gap-5 container p-6 mx-auto">
+
+		{% assign pageCategory = page.categories[0] %}
+		{% assign relevant = site.categories[pageCategory] | where_exp:"post","post.url != page.url" %}
+  		{% for post in relevant limit:3 %}
+
+        {% include post-preview.html %}
+      		
+  		{% endfor %}
+  		
+	</div>
+
+</section>

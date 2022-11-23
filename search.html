@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<section class="container mx-auto">
+<div>
+    <!-- HTML elements for search -->
+  <input class="flex justify-center border-2 border-gray-200 p-6 w-full"type="text" id="search-input" placeholder="What are you looking for?">
+  <ul class="grid grid-cols-3 gap-2 my-5" id="results-container"></ul>
+
+  <!-- or without installing anything -->
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+
+  <!-- Javascript -->
+  <script>
+    var sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '/search.json',
+      searchResultTemplate: '<div class="m-1"><a href="{{ site.url }}{url}" class="p-4 rounded bg-slate-300 block"><h2>{title}</h2><p class="text-xs uppercase leading-5">Category</p></a></div>',
+      noResultsText: '<div class="">Sorry no luck</div>'
+    })
+  </script>
+</div>
+</section>
+

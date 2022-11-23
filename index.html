@@ -1,5 +1,64 @@
 ---
 layout: default
 title: Homepage
+cta-banner: true
+cta-link: https://www.google.com
+heading: This is the main headline
+description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque laboriosam, nulla nobis error, atque dolor accusamus corrupti molestiae odio id amet assumenda temporibus quo dicta, odit dignissimos numquam vero earum.
+seo:
+  title: Elsewhere Blog
+  meta-description:
+  meta-keywords:
+  featured-image_path:
+  hide-from-google: false
 ---
-<h1 class="text-4xl font-bold text-slate-900">Welcome to your homepage!</h1>
+
+<!------------------ CTA-Banner ------------------>
+
+{% if page.cta-banner == true %} 
+
+  {% include cta_banner.html %}
+
+{% endif %}
+
+<!------------------ Headline ------------------>
+
+<section class="text-center flex justify-center my-16 mx-auto w-[50%]">
+  <div>
+    <h1 class="featured-text text-2xl">{{page.heading}}</h1>
+    <p class="mt-5 text-xs">{{page.description}}</h1>
+  </div>
+</section>
+
+<!------------------ Desktop grid ------------------>
+
+<section class="hidden container mx-auto mt-4 mb-32 md:grid grid-cols-3 gap-6 md:min-h-screen md:grid-cols-6">
+
+  {% for post in site.posts limit: 10 %}
+
+  <a href="{{post.url}}" class="relative bg-slate-200 bg-cover bg-center p-10 
+    {% cycle 'col-span-3 row-span-2 featured-text text-4xl leading-7', 'col-span-1', 'col-span-2 featured-text text-2xl', 'col-span-3 row-span-2 featured-text text-4xl leading-20', 'row-span-2', 'col-span-1', 'col-span-1', 'col-span-2 featured-text text-2xl', 'col-span-2 featured-text text-2xl', 'col-span-1 %}" 
+    style="background-image:url('{{post.featured-image}}')">
+    <div class="absolute text-center inset-0 flex justify-center items-center cursor-pointer p-5 m-2 text-transparent span-border-parent hover:bg-white/[.95] hover:text-black transition duration-300">
+      <div>
+        <h2 class="tracking-[.03em] block mb-4">{{post.title}}</h2>
+        <span class="text-xs uppercase tracking-[.3em] pb-2 figtree">{{post.categories[0]}}</span>
+      </div>
+    </div>  
+  </a>
+
+  {% endfor %}
+
+</section>
+
+<!------------------ Mobile grid ------------------>
+
+<section class="md:hidden container p-6 mb-6 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 text-center">
+  
+  {% for post in site.posts %}
+
+    {% include post-preview.html %}
+
+  {% endfor %}
+
+</section>

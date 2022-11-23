@@ -1,0 +1,15 @@
+<!------------------ Text block ------------------>
+
+<section class="{{block.background-color}} py-6">
+  <div class="container mx-auto px-6 my-10">
+    <div class="grid grid-cols-1 {{block.col-size}} gap-3">
+      
+      {% for item in block.text %}
+      <div>
+        <h3>{{item.heading}}</h3>
+        <p>{{item.copy_html}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

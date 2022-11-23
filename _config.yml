@@ -10,3 +10,124 @@ plugins:
 
 postcss:
   cache: false
+
+# This is to set collections
+
+collections:
+  posts:
+    output: true
+    permalink: /posts/:slug
+  archives:
+    output: true
+
+# This is for CloudCannon options 
+
+_select_data:
+  background-colors:
+    bg-sky-200: Light Background
+    bg-sky-500: Dark Background
+    bg-white: White Background
+  col-sizes:
+    md:grid-cols-1: 1 Column
+    md:grid-cols-2: 2 Columns
+    md:grid-cols-3: 3 Columns
+    md:grid-cols-4: 4 Columns
+  image-positions:
+    left: Left
+    right: Right
+  aspect-ratios:
+    aspect-[4/3]: Landscape
+    aspect-[3/4]: Portrait
+    aspect-square: Square        
+
+# This is for Page blocks
+
+page_blocks: []
+
+_array_structures:
+  page_blocks:
+    - label: Title section
+      icon: article
+      value: 
+        _id: title_section
+        title: Title section
+        heading: What to do in Vancouver
+        author: Tara Hunka
+        category: travel
+        date: 2022-11-21
+    - label: Social Sharing
+      icon: article
+      value: 
+        _id: social_sharing   
+    - label: CTA banner
+      icon: article
+      value: 
+        _id: cta_banner
+        title: CTA banner
+        cta-banner: true
+        cta-link: https://images.unsplash.com/photo-1511489731872-324afc650052?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80   
+    - label: Image banner
+      icon: article
+      value: 
+        _id: image_banner
+        title: Image banner
+        text: Write your text here
+        featured-image: https://images.unsplash.com/photo-1511489731872-324afc650052?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80
+        overlay: true
+    - label: Content section
+      icon: article
+      value:
+        _id: content_section
+        title: Content section
+        background-color: bg-white
+        image-position: 
+        heading: Beautiful Ontario
+        copy-html: Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
+          deserunt corrupti autem blanditiis doloremque, aut illo nemo perferendis
+          eligendi quas consequatur perspiciatis laudantium sint voluptatum eum esse
+          quisquam repellendus molestiae. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Temporibus deserunt corrupti autem blanditiis
+          doloremque, aut illo nemo perferendis eligendi quas consequatur
+          perspiciatis laudantium sint voluptatum eum esse quisquam repellendus
+          molestiae. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Temporibus deserunt corrupti autem blanditiis doloremque, aut illo nemo
+          perferendis eligendi quas consequatur perspiciatis laudantium sint
+          voluptatum eum esse quisquam repellendus molestiae.
+        image: https://images.unsplash.com/photo-1617803672592-177dbdb3abfa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80
+    - label: Video section
+      icon: article
+      value:
+        _id: video_section
+        title: Video section
+        video-url: https://www.youtube.com/embed/WteZwxsvICc
+        background-color: bg-white
+    - label: Gallery section
+      icon: article
+      value:    
+        _id: gallery_section
+        title: Gallery section
+        aspect-ratio: aspect-[3/4]
+        gallery:
+          - image: https://images.unsplash.com/photo-1508693926297-1d61ee3df82a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+          - image: https://images.unsplash.com/photo-1503614472-8c93d56e92ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2011&q=80
+          - image: https://images.unsplash.com/photo-1490623970972-ae8bb3da443e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNhbmFkYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60
+          - image: https://images.unsplash.com/photo-1511489731872-324afc650052?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80
+          - image: https://images.unsplash.com/photo-1617803672592-177dbdb3abfa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80
+          - image: https://images.unsplash.com/photo-1586576782138-19304c43d0e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80
+        background-color: bg-white
+    - label: Text section
+      icon: article
+      value:    
+        _id: text_section
+        title: Text section
+        col-size: md:grid-cols-1
+        background-color: bg-white
+        text:
+          - heading: Nice text
+            copy_html: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          - heading: Nice text
+            copy_html: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          - heading: Nice text
+            copy_html: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          - heading: Nice text
+            copy_html: Lorem ipsum dolor sit amet consectetur adipisicing elit.  

@@ -1,0 +1,13 @@
+<!------------------ This is the blog post preview for index / related posts ------------------>
+
+<div class="py-4">
+  <a href="{{post.url}}"><img class="container mx-auto aspect-[3/4] object-cover mb-5" src="{{post.featured-image}}"></a>
+  
+  {% for item in post.categories %}
+    <a href="{{site.archives.url}}" class="border-b border-b-orange-400 pb-1 text-xs uppercase tracking-[.3em]">{{item.categories}}</a><br>
+  {% endfor %}
+
+    <a href="{{post.url}}" class="inline-block text-2xl featured-text my-4">{{post.title}}</a>
+  <!-- <span class="text-sm block py-5">{{post.author}}</span> -->
+  <span class="text-xs uppercase tracking-[.3em] block">{{post.date | date: "%d %b %Y"}}</span>
+</div>
