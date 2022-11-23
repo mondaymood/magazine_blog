@@ -33,11 +33,9 @@ footer {
 	margin-top: auto;
 }
 
-  .youtube-container { 
+/* .youtube-container { 
 	max-width: 50%;
 }
-
-/* This is fancy CSS that you haven't learnt yet. No need to understand it yet, but you're welcome to copy & paste */
 
 .embed-container { 
 	position: relative;
@@ -79,4 +77,4 @@ footer {
 
 .span-border-parent:hover span {
 	border-bottom: 1px solid rgb(48, 169, 80);
-}
+} */
