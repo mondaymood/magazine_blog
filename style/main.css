@@ -29,9 +29,11 @@ footer {
 
 .span-border-parent:hover span {
 	border-bottom: 1px solid rgb(219, 142, 16);
-} */
+}
 
-
+.sticky-nav-fix {
+	margin-top: -168px;
+}
 
 .youtube-container { 
 	max-width: 50%;
