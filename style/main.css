@@ -9,7 +9,3 @@
 .button {
     @apply inline-block p-6 bg-blue-600 text-white hover:bg-blue-800 transition;
 }
-
-.featured-text {
-	font-family: 'Playfair Display', serif;
-}
