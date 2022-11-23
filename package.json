@@ -1,0 +1,24 @@
+{
+  "name": "ioc-jekyll-tailwind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PollockCR/ioc-jekyll-tailwind.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PollockCR/ioc-jekyll-tailwind/issues"
+  },
+  "homepage": "https://github.com/PollockCR/ioc-jekyll-tailwind#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "cssnano": "^5.1.14",
+    "postcss": "^8.4.19",
+    "postcss-import": "^15.0.0",
+    "tailwindcss": "^3.2.4"
+  }
+}
