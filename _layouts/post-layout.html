@@ -1,16 +1,15 @@
 ---
 layout: default
-heading: What to do in Vietnam
-featured-image: https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80
-banner-text: Hello
+heading: Post title
+featured-image:
+banner-text: 
 overlay: true
-
 ---
 
 <!------------------ Image banner ------------------>
 
-<section> 
-  <div class="{% if page.overlay == true %} bg-blend-multiply bg-neutral-500 text-white {% endif %} bg-cover h-[50vh] bg-center flex justify-center items-center text-2xl"
+<section class="py-10"> 
+  <div class="{% if page.overlay == true %} bg-blend-multiply bg-neutral-300 text-white {% endif %} bg-cover h-[50vh] bg-center flex justify-center items-center text-2xl"
   style="background-image: url('{{page.featured-image}}')">
     <div class="text-lg">{{page.banner-text}}</div>
   </div>
@@ -19,10 +18,14 @@ overlay: true
 <!------------------ Title section ------------------>
 
 <section class="text-center py-10 container mx-auto px-4">
-  <span class="text-sm uppercase block py-5">{{page.categories}}</span>
-  <h1 class="text-2xl">{{page.title}}</h1>
-  <span class="text-sm block py-5">{{page.author}}</span>
-  <span class="text-sm block">{{page.date | date: "%d %b %Y"}}</span>
+
+  {% for item in page.categories %}
+  <a href="/archives/{{item}}" class="mx-1 inline-block border-b border-b-orange-400 pb-1 text-xs uppercase tracking-[.3em]">{{item}}</a>
+  {% endfor %}
+
+  <h1 class="text-5xl featured-text mt-4">{{page.title}}</h1>
+  <span class="text-sm block py-5 italic">by {{page.author}}</span>
+  <span class="text-xs uppercase tracking-[.3em] block">{{page.date | date: "%d %b %Y"}}</span>
 </section>
 
 <!------------------ Social sharing ------------------>
@@ -37,9 +40,9 @@ overlay: true
 
 <!------------------ Related posts ------------------>
 
-<section class="bg-slate-200 text-center py-10">
-	<h4> Related Posts </h4>
-	<div class="grid grid-cols-3 gap-5 container p-6 mx-auto">
+<section class="border-t border-t-black container mx-auto p-6 text-center mt-10">
+	<h4 class="my-10"> You may also enjoy:</h4>
+	<div class="grid md:grid-cols-3 gap-5 mb-10">
 
 		{% assign pageCategory = page.categories[0] %}
 		{% assign relevant = site.categories[pageCategory] | where_exp:"post","post.url != page.url" %}

@@ -1,0 +1,13 @@
+<!------------------ Text / Image block ------------------>
+
+<section class="{{block.background-color}} py-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-20 my-10 container mx-auto px-6 items-center">
+    <div class="{% if block.image-position == 'right' %} order-2 {% endif %}">
+      <img class="w-full max-h-[80vh] md:h-full object-cover" src="{{block.image}}">
+    </div>
+    <div>
+      <h3 class="text-lg pb-6">{{block.heading}}</h3>
+      <p>{{block.copy-html}}</p>
+    </div>
+</div>
+</section>
