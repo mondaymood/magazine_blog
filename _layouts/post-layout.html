@@ -9,7 +9,7 @@ overlay: true
 <!------------------ Image banner ------------------>
 
 <section class="py-10"> 
-  <div class="{% if page.overlay == true %} bg-blend-multiply bg-neutral-300 text-white {% endif %} bg-cover h-[50vh] bg-center flex justify-center items-center text-2xl"
+  <div class="{% if page.overlay == true %} bg-blend-multiply bg-neutral-300 text-white {% endif %} bg-fixed bg-cover h-[50vh] bg-center flex justify-center items-center text-2xl"
   style="background-image: url('{{page.featured-image}}')">
     <div class="text-lg">{{page.banner-text}}</div>
   </div>
@@ -42,7 +42,7 @@ overlay: true
 
 <section class="border-t border-t-black container mx-auto p-6 text-center mt-10">
 	<h4 class="my-10"> You may also enjoy:</h4>
-	<div class="grid md:grid-cols-3 gap-5 mb-10">
+	<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
 
 		{% assign pageCategory = page.categories[0] %}
 		{% assign relevant = site.categories[pageCategory] | where_exp:"post","post.url != page.url" %}

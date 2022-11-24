@@ -1,21 +1,27 @@
 <!------------------ Site-Header ------------------>
 
-<header class="text-center mt-10 top-0 bg-white z-20">
+<header class="md:text-center mt-10 px-6 top-0 bg-white z-20">
   
-  <div class="container mx-auto">
-    <div class="featured-text text-6xl mb-10"><a href="/index.html">Elsewhere.</a></div>
+  <div class="container mx-auto relative">
+    <div class="featured-text md:text-6xl text-4xl mb-10"><a href="/index.html">Elsewhere.</a></div>
+    <a class="md:hidden absolute top-3 right-6" href="/search.html">
+			  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>    
+		  </a>
+    </div>
   </div>
 
   <!------------------ Nav-bar ------------------>
 
-  <div class="grid px-6 md:grid-cols-6 container mx-auto">
+  <div class="md:grid md:grid-cols-12 container mx-auto">
     <div></div>
-    <div class="col-span-4">
-      <nav class="p-2 mb-10 flex flex-row space-x-10 flex-nowrap overflow-x-scroll md:overflow-auto scrolling-touch md:justify-center">  
+    <div class="col-span-10">
+      <nav class="text-center p-2 md:mb-10 flex flex-row space-x-10 md:justify-center flex flex-row flex-nowrap overflow-x-scroll md:overflow-auto scrolling-touch">  
         
         {% for item in site.archives %}
         {% if item.nav-bar == true %}
-        <a class="inline-block border-b border-black hover:border-b hover:border-orange-400 text-xs uppercase tracking-[.3em] pb-2" href="{{item.url}}">{{item.title}}</a>
+        <a class="inline-block whitespace-nowrap border-b border-black hover:border-b hover:border-orange-400 text-xs uppercase tracking-[.3em] pb-2" href="{{item.url}}">{{item.title}}</a>
         {% endif %}
         {% endfor %}
         
@@ -23,8 +29,8 @@
     </div>
 
     <!------------------ Search ------------------>
-    
-    <div class="flex text-center md:justify-end pt-1">		
+
+    <div class="hidden md:flex justify-end pt-1">		
       <a href="/search.html">
 			  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />

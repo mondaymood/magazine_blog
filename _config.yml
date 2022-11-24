@@ -130,4 +130,25 @@ _array_structures:
           - heading: Nice text
             copy_html: Lorem ipsum dolor sit amet consectetur adipisicing elit.
           - heading: Nice text
-            copy_html: Lorem ipsum dolor sit amet consectetur adipisicing elit.  
+            copy_html: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    - label: Flex content section
+    icon: article
+    value:    
+      _id: flex_content_section
+      title: Flex_content section
+      col-size: md:grid-cols-2
+      background-color: bg-white        
+
+  columns:
+    - label: Image
+      icon: photo_camera
+      value:    
+        _type: image
+        image: 
+    - label: Text
+      icon: description
+      value:    
+        _type: text
+        title: text
+        image: 
+      
